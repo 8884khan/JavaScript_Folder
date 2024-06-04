@@ -91,6 +91,7 @@
   <script>
 
    function calculate(){
+
     let distance = document.getElementById('distance').value
     let myTime = document.getElementById('time').value
 
