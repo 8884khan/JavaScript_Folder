@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reverse Your Name</title>
+    <style>
+        .container{
+            width: 50%;
+            text-align: center;
+            margin: auto;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            font-size: 24px;
+        }
+        label{
+            text-align: end;
+            text-decoration: underline;
+        }
+        input{
+            padding: 6px;
+            border: none;
+            border-bottom: 1px solid royalblue;
+            margin-left: 15px;
+            outline: none;
+        }
+        #btn{
+            padding: 8px 10px;
+            font-size: 20px;
+            border: none;
+            box-shadow: 2px 2px 2px 2px gray;
+background-color: rgb(101, 101, 155);
+color: white;
+        }
+        #result{
+            width: 50%;
+            margin: auto;
+           
+            margin-top: 10px;
+            color: red;
+        }
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <label for="fname">Enter Your First Name:</label>
+      <input type="text" id="fname" /><br /><br />
+      <label for="lname">Enter Your Last Name:</label>
+      <input type="text" id="lname" /><br /><br />
+
+      <button id="btn" onclick="nameChange()">Click to change name</button>
+      <h3 class="result" id="result"></h3>
+    </div>
+
+    <script>
+    
+
+      function nameChange() {
+        let fname = document.getElementById("fname").value;
+      let lname = document.getElementById("lname").value;
+    //   console.log(fname, lname);
+        let n1 = fname.split("");
+        let n1rev = n1.reverse();
+        let n1join = n1rev.join("");
+
+        // console.log(n1join);
+
+        let n2 = lname.split("");
+        let n2rev = n2.reverse();
+        let n2join = n2rev.join("");
+
+        let final = n1join +' '+ n2join;
+
+        document.getElementById("result").innerHTML = `Your Reverse Name is:-  '${final.toUpperCase()}'`;
+
+        return final;
+      }
+    </script>
+  </body>
+</html>
